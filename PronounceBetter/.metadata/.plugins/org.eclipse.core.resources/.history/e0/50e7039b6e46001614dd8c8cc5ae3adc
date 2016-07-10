@@ -1,0 +1,30 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+
+public class TestScripts {
+	
+	static ArrayList<String> script;
+	
+	public static void main(String[] args) throws IOException {
+		script = new ArrayList<String>();
+		
+		OpenFile("/FriendsScript/FriendsScript101.txt");
+		
+	}
+	
+	public static void OpenFile(String path) throws IOException {
+		script.clear();
+		FileReader fr = new FileReader(path);
+		BufferedReader br = new BufferedReader(fr);
+		
+		String line;
+		while((line = br.readLine()) != null) {
+			script.add(line);
+		}
+		
+		
+	}
+
+}

@@ -1,0 +1,8 @@
+INDEX VERSION 1.127+C:\Users\Kwon\workspace\PronounceBetter\.metadata\.plugins\org.eclipse.jdt.core
+2820081742.index
+3693326148.index
+414531731.index
+2724464781.index
+1517043942.index
+1726317808.index
+419793254.index

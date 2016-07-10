@@ -1,0 +1,54 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+public class TestScripts {
+	
+	static ArrayList<String> script;
+	
+	public static void main(String[] args) throws IOException {
+		script = new ArrayList<String>();
+		List<String> fullScript = new ArrayList<String>();
+		String[] cast = {"Rachel", "Ross", "Monica", "Joey", "Phoebe", "Chandler"};
+		
+		fullScript = OpenFile("./Friendstranscript/Friendstranscript101.txt");
+		
+		for(String ret : fullScript) {
+			boolean isCast = false;
+			
+			String[] parts = ret.split(":");
+			
+			for(String name : cast) {
+				System.out.println();
+				System.out.println("parts[0] = " + parts[0] + " name = " + name + " :: isCast = " + isCast);;
+				if (name == parts[0]){
+					isCast = true;
+				}
+				System.out.println("parts[0] = " + parts[0] + " name = " + name + " :: isCast = " + isCast);;
+			}
+			
+			//System.out.println(parts[0]);
+			//System.out.println(isCast);
+		}
+		
+	}
+	
+	private static List<String> OpenFile(String path) throws IOException {
+		
+		FileReader fr = new FileReader(path);
+		BufferedReader br = new BufferedReader(fr);
+		
+		List<String> lines = new ArrayList<String>();
+		
+		String line;
+		while((line = br.readLine()) != null) {
+			lines.add(line);
+		}
+		br.close();
+		return lines;
+		
+	}
+
+}
